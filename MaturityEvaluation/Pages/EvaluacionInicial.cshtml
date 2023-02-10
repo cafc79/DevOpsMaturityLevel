@@ -1,0 +1,42 @@
+﻿@page
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model MaturityEvaluation.Pages.EvaluacionInicialModel
+@{
+    
+}
+
+<h2>
+</h2>
+
+<div class="mx-0 mx-sm-auto">
+    <form method="post" >
+        <div class="card">
+            <div class="card-body">
+                <span class="text-center">
+                    <div class="alert alert-secondary mt-4">
+                        <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+                        <strong>@Model.mQuestion</strong>
+                    </div>
+                </span>
+                <p />
+                <div class="info-list">
+                    <input type="hidden" name="pCurrent" value="@Model.mCurrent" />
+
+                    <input type="radio" name="pAnswer" value="N">
+                    <label class="btn btn-outline-danger" for="danger-outlined">NO</label>
+
+                    <input type="radio" name="pAnswer" value="Y">
+                    <label class="btn btn-outline-success" for="success-outlined">YES</label>
+
+                </div>
+                <hr />
+
+            </div>
+            <div class="card-footer text-end">
+                <a asp-page="./Index" class="btn btn-exit"><i class="fa fa-edit"></i></a>
+                <button type="button" class="btn btn-exit" asp-page="/Index">Exit Quiz</button>
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+    </form>
+</div>
