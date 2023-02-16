@@ -52,10 +52,10 @@ namespace MaturityEvaluation.Entity
             ST1.Add(new SurveyT1(11, "N", 12, "Is your pipeline difficult to trace ?"));
             ST1.Add(new SurveyT1(12, "Y", 140, "Defined"));
             ST1.Add(new SurveyT1(13, "N", 14, "Do you have automated unit tests ?"));
-            ST1.Add(new SurveyT1(14, "N", 150, "Initial"));
+            ST1.Add(new SurveyT1(14, "N", 150, "Ad-Hoc"));
             ST1.Add(new SurveyT1(15, "Y", 16, "Are reports done manually ?"));
             ST1.Add(new SurveyT1(15, "N", 13, "Are reports automatic and visible to teams ?"));
-            ST1.Add(new SurveyT1(16, "Y", 150, "Initial"));
+            ST1.Add(new SurveyT1(16, "Y", 150, "Ad-Hoc"));
             ST1.Add(new SurveyT1(16, "N", 13, "Are reports automatic and visible to teams ?"));
         }
 
@@ -72,6 +72,17 @@ namespace MaturityEvaluation.Entity
                 var s = (from st in ST1 where st.Origin.Equals(bOrigen) && st.Transicion == cTransition select st);
                 return s.FirstOrDefault();
             }
+        }
+
+        public string? GetResult(string estado) { 
+
+            Dictionary<string, string> rs1 = new Dictionary<string, string>();
+            rs1.Add("Optimized", "Congratulation! You are in the top percentile of DevOps practitioners. Your continuous assessments of the overall  process lead you to achieve your business objectives with minimal risk and cost.");
+            rs1.Add("Measured", "Process quality and performance are measured to achieve visibility and predictability. The performance of your processes is controlled using statistical and other measurable techniques");
+            rs1.Add("Managed", "Processes are well characterized and standardized across all projects. Your standard processes are used to establish consistency throughout the organization");
+            rs1.Add("Defined", "Your processes are defined but not standardized across projects or even across different lifecycle stages of the same project.");
+            rs1.Add("Ad-Hoc", "Your processes are usually ad-hoc and disordered. Outcomes are unpredictable, often exceeding allocated budget and timelines");
+            return rs1.GetValueOrDefault(estado);
         }
     }
 }

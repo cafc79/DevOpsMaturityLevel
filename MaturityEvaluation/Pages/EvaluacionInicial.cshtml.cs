@@ -35,7 +35,8 @@ namespace MaturityEvaluation.Pages
                 return new PageResult();
             }
             else
-                return new RedirectToPageResult("EvalResult");
+                return new RedirectToPageResult("EvalResult", null, new { stage = survey.Question });
+            
         }
     }
 }
