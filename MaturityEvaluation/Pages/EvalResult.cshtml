@@ -6,21 +6,33 @@
 <h2>
 </h2>
 
-<div class="mx-0 mx-sm-auto">    
-    <div class="card">
-        <div class="card-body">
-            <span class="text-center">
-                <div class="alert alert-secondary mt-4">
-                    <span class="oi oi-pencil me-2" aria-hidden="true"></span>
-                    <strong>@Model.mTitle</strong>
-                </div>
-            </span>
-            <p />
-            <div class="info-list">
-                <span class="oi oi-pencil me-2" aria-hidden="true">@Model.mDescripcion</span>
 
+<div class="container-fluid flex-grow-1 container-p-y">
+    <!-- Layout Demo -->
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <img src="../assets/img/layouts/layout-fluid-light.png"
+                 class="img-fluid"
+                 alt="Layout fluid"
+                 data-app-light-img="layouts/layout-fluid-light.png"
+                 data-app-dark-img="layouts/layout-fluid-dark.png" />
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <span class="text-center">
+                    <div class="alert alert-secondary mt-4 @Model.mLevel">
+                        <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+                        <strong>@Model.mTitle</strong>
+                    </div>
+                </span>
+                <p />
+                <div class="info-list">
+                    <span class="oi oi-pencil me-2" aria-hidden="true">@Model.mDescripcion</span>
+
+                </div>
+                <hr />
             </div>
-            <hr />
-        </div>            
+        </div>
     </div>
+    <!--/ Layout Demo -->
 </div>
