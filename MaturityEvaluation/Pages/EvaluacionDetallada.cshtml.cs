@@ -14,10 +14,10 @@ namespace MaturityEvaluation.Pages
 
         public void OnGet()
         {
-            EvaluationT2 ev = new EvaluationT2();
-            var survey = ev.GetNext(0, null);
-            mCurrent = survey.Destiny;
-            mQuestion = survey.Question;
+            //EvaluationT2 ev = new EvaluationT2();
+            //var survey = ev.GetNext(0, null);
+            //mCurrent = survey.m;
+            //mQuestion = survey.Question;
         }
 
         public async Task<IActionResult> OnPost(int pCurrent, string pAnswer)
