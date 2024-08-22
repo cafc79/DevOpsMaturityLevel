@@ -54,10 +54,11 @@ jobs:
 
       - name: Build with dotnet
         run: |
-          dotnet build --configuration Release
           my_var=${{ secrets.URL }}    
           echo "Output [$my_var]"
           echo "valor=${{ secrets.URL }}" >> $GITHUB_OUTPUT  
+          dotnet build --configuration Release
+          
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
