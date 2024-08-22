@@ -55,6 +55,8 @@ jobs:
       - name: Build with dotnet
         run: |
           dotnet build --configuration Release
+          my_var=${{ secrets.URL }}    
+          echo "Output [$my_var]"
           echo "valor=${{ secrets.URL }}" >> $GITHUB_OUTPUT  
 
       - name: dotnet publish
